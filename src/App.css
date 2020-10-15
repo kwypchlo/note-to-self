@@ -1,0 +1,99 @@
+body {
+  font-family: "Metropolis", Helvetica, Arial, Sans-Serif;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+  width: 80%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+input {
+  width: 100%;
+  color: rgb(74, 85, 104);
+  padding: 0.5rem 0.75rem;
+  line-height: 1.25;
+  border-width: 1px;
+  border-radius: 0.25rem;
+}
+
+.flex {
+  display: flex;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-size: 1.275rem;
+  font-weight: 700;
+  display: block;
+  color: white;
+}
+
+.skylink {
+  font-size: 1rem;
+  color: #57b560;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.success-message {
+  color: #57b560;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+button {
+  color: white;
+  background-color: #57b560;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+}
+
+.container {
+  margin: 20px;
+}
+
+.error {
+  color: #e65c5c;
+  font-size: 1rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.275rem;
+}
+
+a {
+  color: #57b560;
+}
