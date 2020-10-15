@@ -83,6 +83,10 @@ button {
   margin: 20px;
 }
 
+.empty-note {
+  font-size: 1.275rem;
+}
+
 .error {
   color: #e65c5c;
   font-size: 1rem;

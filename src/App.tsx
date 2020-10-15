@@ -1,34 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import "typeface-metropolis";
 import { SkynetClient, SkyFile, FileID, User, FileType } from "skynet-js";
 
-const skynetClient = new SkynetClient("https://siasky.dev");
+const skynetClient = new SkynetClient();
 const filename = "note.txt";
-const fileID = new FileID(
-  "note-to-myself-app",
-  FileType.PublicUnencrypted,
-  filename
-);
+const fileID = new FileID("note-to-self", FileType.PublicUnencrypted, filename);
 
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [note, setNote] = useState("");
+  const [noteExists, setNoteExists] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [skylink, setSkylink] = useState("");
   const [loading, setLoading] = useState(false);
   const [displaySuccess, setDisplaySuccess] = useState(false);
   const loadNote = async () => {
     try {
       const user = new User(username, password);
-      const response = await skynetClient.lookupRegistry(user, fileID);
+      const skyFile = await skynetClient.getFile(user, fileID);
+      const value = await skyFile.file.text();
 
-      setSkylink(response?.value?.data ?? "");
-    } catch {
-      setSkylink("");
+      setNote(value);
+      setNoteExists(true);
+    } catch (error) {
+      setErrorMessage(error.message);
+      setNote("");
     }
   };
   const handleLogin = async (event) => {
@@ -51,25 +50,13 @@ function App() {
       await loadNote();
 
       setDisplaySuccess(true);
-      setTimeout(() => setDisplaySuccess(false), 1000);
+      setTimeout(() => setDisplaySuccess(false), 5000);
     } catch (error) {
       setErrorMessage(error.message);
     }
 
     setLoading(false);
   };
-
-  useEffect(() => {
-    if (skylink) {
-      fetch(skynetClient.getSkylinkUrl(skylink)).then((response) => {
-        response.text().then((text) => {
-          setNote(text);
-        });
-      });
-    } else {
-      setNote("");
-    }
-  }, [skylink, setNote]);
 
   return (
     <div className="App">
@@ -80,9 +67,9 @@ function App() {
           <h1>Note To Self</h1>
           {authenticated ? (
             <div>
-              {!skylink && (
+              {!noteExists && (
                 <div className="mb-2">
-                  <div className="flex">
+                  <div className="flex empty-note">
                     You did not set a note yet, write one below.
                   </div>
                 </div>
