@@ -10084,10 +10084,10 @@ sisteransi@^1.0.4:
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
-skynet-js@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/skynet-js/-/skynet-js-2.1.0.tgz#a2564356cc973ea75c79102620a3466e8d4f6656"
-  integrity sha512-PUONQAdvuEmBI8F6eVljxEF/KPIIDcRI1fz4CMSXHgn5q+NWH3rSS+Bblb3/saxHkmm+uCKlfHwZHD+PR2W8iA==
+skynet-js@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/skynet-js/-/skynet-js-2.1.1.tgz#49736105fc239db0af3423945abf36aebcdf6351"
+  integrity sha512-XZER4zwLPygV19asr5GcXpKx70MUNAWRjRPwLBpbIhbu95pvXiREfdvX5wfXgVzVVC3F1E9066dc+MMKwV6gHw==
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@types/node-forge" "^0.9.5"
