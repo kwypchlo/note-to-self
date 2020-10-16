@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import "typeface-metropolis";
+import "fontsource-metropolis/all.css";
 import { SkynetClient, SkyFile, FileID, User, FileType } from "skynet-js";
 
 const skynetClient = new SkynetClient();

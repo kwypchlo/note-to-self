@@ -5111,6 +5111,11 @@ follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
+fontsource-metropolis@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/fontsource-metropolis/-/fontsource-metropolis-3.0.1.tgz#ed003537ac8531849cbed70b7bad557d1cbd553e"
+  integrity sha512-Cmog2eixbXddQgRXgf138p6ywlIo6kOzjbz+FvTXrnl5cSwTeiIO8bjqkTJe969ckKjOEZSf0WhgQdf4/DPLfw==
+
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -10972,11 +10977,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-metropolis@^0.0.74:
-  version "0.0.74"
-  resolved "https://registry.yarnpkg.com/typeface-metropolis/-/typeface-metropolis-0.0.74.tgz#4201ff1e3b86f55825eed53662c49dff54c461f3"
-  integrity sha512-8qJnWwD5GkFqoNkv0t068jXziJHoIayq7dNl9a0BRy30/VznqmEgrQWkMDG8KxH2hRXXAWZfayXM9L6sZEkaaw==
 
 typescript@^4.0.3:
   version "4.0.3"
