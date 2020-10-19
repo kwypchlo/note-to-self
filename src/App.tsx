@@ -4,7 +4,7 @@ import "./App.css";
 import "fontsource-metropolis/all.css";
 import { SkynetClient, SkyFile, FileID, User, FileType } from "skynet-js";
 
-const skynetClient = new SkynetClient();
+const skynetClient = new SkynetClient("https://siasky.net");
 const filename = "note.txt";
 const fileID = new FileID("note-to-self", FileType.PublicUnencrypted, filename);
 
@@ -21,10 +21,16 @@ function App() {
     try {
       const user = new User(username, password);
       const skyFile = await skynetClient.getFile(user, fileID);
-      const value = await skyFile.file.text();
-
-      setNote(value);
-      setNoteExists(true);
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNote(reader.result as string);
+        setNoteExists(true);
+      };
+      reader.onerror = () => {
+        setNote("");
+        setErrorMessage(`Failed to read file: ${reader.error}`);
+      };
+      reader.readAsText(skyFile.file);
     } catch (error) {
       setErrorMessage(error.message);
       setNote("");
