@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import "fontsource-metropolis/all.css";
 
-const skynetClient = new SkynetClient();
+const skynetClient = new SkynetClient("https://siasky.net");
 const filename = "data.json";
 
 function App() {
