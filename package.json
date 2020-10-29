@@ -1,23 +1,23 @@
 {
-  "name": "base32",
+  "name": "note-to-self",
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.0.4",
-    "@testing-library/user-event": "^12.1.6",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.13",
-    "@types/node": "^14.14.3",
-    "@types/react": "^16.9.49",
-    "@types/react-dom": "^16.9.8",
+    "@types/node": "^14.14.6",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
     "axios": "^0.21.0",
     "fontsource-metropolis": "^3.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.0",
-    "skynet-js": "^2.1.1",
-    "typescript": "^4.0.3",
+    "react-scripts": "4.0.0",
+    "skynet-js": "^2.2.0",
+    "typescript": "^4.0.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "husky": "^4.3.0",
-    "lint-staged": "^10.4.1",
+    "lint-staged": "^10.5.0",
     "prettier": "^2.1.2"
   }
 }
