@@ -16,7 +16,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
-    "skynet-js": "^2.2.0",
+    "skynet-js": "^2.4.0",
     "typescript": "^4.0.5",
     "web-vitals": "^0.2.4"
   },
@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "husky": "^4.3.0",
-    "lint-staged": "^10.5.0",
+    "lint-staged": "^10.5.1",
     "prettier": "^2.1.2"
   }
 }
