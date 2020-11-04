@@ -108,12 +108,13 @@ function App() {
             </div>
 
             <div className="mt-2 flex justify-between">
-              <a
+              <button
                 onClick={handleReset}
-                className="text-sm text-green-500 hover:underline text-center cursor-pointer"
+                className="background-transparent text-sm text-green-500 hover:underline outline-none focus:outline-none mr-1 mb-1"
+                type="button"
               >
                 &larr; go back
-              </a>
+              </button>
 
               {displaySuccess && (
                 <span className="text-sm text-green-500 font-bold">
