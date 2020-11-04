@@ -25,7 +25,9 @@ jobs:
           REACT_APP_GIT_SHA: ${{ github.sha }}
 
       - name: "Deploy to Skynet"
-        uses: kwypchlo/deploy-to-skynet-action@main
+        uses: kwypchlo/deploy-to-skynet-action@registry
         with:
           upload-dir: build
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          registry-seed: ${{ secrets.REGISTRY_SEED }}
+          registry-datakey: skylink.txt
