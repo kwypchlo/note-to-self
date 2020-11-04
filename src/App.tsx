@@ -178,6 +178,14 @@ function App() {
           >
             GitHub
           </a>
+          {process.env.REACT_APP_GIT_SHA && (
+            <a
+              href={`https://github.com/kwypchlo/skydb-example/commit/${process.env.REACT_APP_GIT_SHA}`}
+              className="mt-2 block text-xs text-gray-700 hover:underline font-mono"
+            >
+              {process.env.REACT_APP_GIT_SHA}
+            </a>
+          )}
         </footer>
       </div>
     </div>
