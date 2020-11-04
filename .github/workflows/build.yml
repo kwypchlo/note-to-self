@@ -3,9 +3,7 @@ name: build and deploy
 on:
   pull_request:
   push:
-    branches:
-      - main
-      - registry-test
+    branches: [main]
 
 jobs:
   build:
