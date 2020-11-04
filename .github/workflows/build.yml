@@ -35,5 +35,5 @@ jobs:
           upload-dir: build
           github-token: ${{ secrets.GITHUB_TOKEN }}
           registry-update: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-          registry-datakey: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && "skylink.txt" }}
+          registry-datakey: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'skylink.txt' }}
           registry-seed: ${{ secrets.REGISTRY_SEED }}
