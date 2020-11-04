@@ -3,7 +3,7 @@ name: build and deploy
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
@@ -32,4 +32,4 @@ jobs:
         with:
           upload-dir: build
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          registry-seed: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.REGISTRY_SEED || '' }}
+          registry-seed: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && secrets.REGISTRY_SEED || '' }}
