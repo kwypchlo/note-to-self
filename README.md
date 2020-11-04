@@ -1,5 +1,7 @@
 # Example SkyDB App
 
+Current main branch always deployed to: [https://note-to-self.hns.siasky.net](https://note-to-self.hns.siasky.net)
+
 ## Available Scripts
 
 _Install dependencies with `yarn` before trying to execute any of the commands._
