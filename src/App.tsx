@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SkynetClient, keyPairFromSeed } from "skynet-js";
+import { SkynetClient, genKeyPairFromSeed } from "skynet-js";
 import SkynetSVG from "./assets/skynet.svg";
 
 const skynetClient = new SkynetClient(process.env.REACT_APP_PORTAL_URL);
@@ -24,7 +24,7 @@ function App() {
   };
   const loadNote = async () => {
     try {
-      const { publicKey } = keyPairFromSeed(secret);
+      const { publicKey } = genKeyPairFromSeed(secret);
       const entry = await skynetClient.db.getJSON(publicKey, filename);
 
       if (entry) {
@@ -48,7 +48,7 @@ function App() {
   const handleSetNote = async () => {
     setLoading(true);
 
-    const { privateKey } = keyPairFromSeed(secret);
+    const { privateKey } = genKeyPairFromSeed(secret);
     try {
       await skynetClient.db.setJSON(
         privateKey,
