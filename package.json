@@ -21,7 +21,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "yarn build:css && react-scripts start",
+    "start": "yarn build:css && cross-env REACT_APP_PORTAL_URL=https://siasky.net react-scripts start",
     "build": "cross-env NODE_ENV=production yarn build:css && react-scripts build",
     "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
     "test": "react-scripts test",

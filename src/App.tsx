@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SkynetClient, keyPairFromSeed } from "skynet-js";
 import SkynetSVG from "./assets/skynet.svg";
 
-const skynetClient = new SkynetClient();
+const skynetClient = new SkynetClient(process.env.REACT_APP_PORTAL_URL);
 const filename = "data.json";
 
 function App() {
