@@ -3,7 +3,7 @@ name: build and deploy
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, test-deploy-to-skynet-update]
 
 jobs:
   build:
