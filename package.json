@@ -16,7 +16,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
-    "skynet-js": "^2.7.0",
+    "skynet-js": "^3.0.2",
     "typescript": "^4.0.5",
     "web-vitals": "^0.2.4"
   },

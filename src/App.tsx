@@ -8,7 +8,7 @@ const filename = "data.json";
 function App() {
   const [secret, setSecret] = useState("");
   const [note, setNote] = useState("");
-  const [revision, setRevision] = useState(0);
+  const [revision, setRevision] = useState(BigInt(0));
   const [authenticated, setAuthenticated] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,7 @@ function App() {
   const handleReset = () => {
     setSecret("");
     setNote("");
-    setRevision(0);
+    setRevision(BigInt(0));
     setErrorMessage("");
     setLoading(false);
     setDisplaySuccess(false);
@@ -28,7 +28,7 @@ function App() {
       const entry = await skynetClient.db.getJSON(publicKey, filename);
 
       if (entry) {
-        setNote(entry.data?.note ?? "");
+        setNote((entry?.data?.note ?? "") as string);
         setRevision(entry.revision);
       }
     } catch (error) {
@@ -54,10 +54,10 @@ function App() {
         privateKey,
         filename,
         { note },
-        revision + 1
+        revision + BigInt(1)
       );
 
-      setRevision(revision + 1);
+      setRevision(revision + BigInt(1));
       setDisplaySuccess(true);
       setTimeout(() => setDisplaySuccess(false), 5000);
     } catch (error) {
