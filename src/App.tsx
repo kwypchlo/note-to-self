@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { SkynetClient, genKeyPairFromSeed } from "skynet-js";
 import SkynetSVG from "./assets/skynet.svg";
 
-const skynetClient = new SkynetClient(process.env.REACT_APP_PORTAL_URL);
+const portal =
+  window.location.hostname === "localhost"
+    ? process.env.REACT_APP_PORTAL_URL
+    : undefined;
+
+const skynetClient = new SkynetClient(portal);
 const filename = "data.json";
 
 function App() {
   const [secret, setSecret] = useState("");
   const [note, setNote] = useState("");
-  const [revision, setRevision] = useState(BigInt(0));
   const [authenticated, setAuthenticated] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,7 +20,6 @@ function App() {
   const handleReset = () => {
     setSecret("");
     setNote("");
-    setRevision(BigInt(0));
     setErrorMessage("");
     setLoading(false);
     setDisplaySuccess(false);
@@ -29,7 +32,6 @@ function App() {
 
       if (entry) {
         setNote((entry?.data?.note ?? "") as string);
-        setRevision(entry.revision);
       }
     } catch (error) {
       setErrorMessage(error.message);
@@ -50,14 +52,8 @@ function App() {
 
     const { privateKey } = genKeyPairFromSeed(secret);
     try {
-      await skynetClient.db.setJSON(
-        privateKey,
-        filename,
-        { note },
-        revision + BigInt(1)
-      );
+      await skynetClient.db.setJSON(privateKey, filename, { note });
 
-      setRevision(revision + BigInt(1));
       setDisplaySuccess(true);
       setTimeout(() => setDisplaySuccess(false), 5000);
     } catch (error) {
