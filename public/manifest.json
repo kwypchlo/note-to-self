@@ -1,6 +1,6 @@
 {
-  "short_name": "Base32 Encoder",
-  "name": "Skynet Skylink Base32 Encoder",
+  "short_name": "Note To Self",
+  "name": "Note To Self",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#5c6ac4",
   "background_color": "#ffffff"
 }
