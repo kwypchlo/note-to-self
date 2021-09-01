@@ -11,23 +11,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "16"
 
-      - name: Install dependencies
-        run: yarn
-
-      - name: Run unit tests
-        run: yarn test
-
-      - name: Build
-        run: yarn build
+      - run: yarn
+      - run: yarn test
+      - run: yarn build
         env:
           REACT_APP_GIT_SHA: ${{ github.sha }}
 
       - name: "Deploy to Skynet"
-        uses: kwypchlo/deploy-to-skynet-action@main
+        uses: skynetlabs/deploy-to-skynet-action@v2
         with:
           upload-dir: build
           github-token: ${{ secrets.GITHUB_TOKEN }}
